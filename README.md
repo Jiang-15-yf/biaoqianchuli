@@ -1,6 +1,5 @@
 # 价格牌处理工具 · Python 项目
 
-把原单文件 HTML 工具翻译为 Python 项目：
 - **核心算法**用 Python 重写，便于在 IDE 里调试和修改
 - **GUI**用 Tkinter（Python 自带），无需额外 GUI 框架
 - **EXE**用 PyInstaller 一键打包，分发给最终用户
@@ -65,9 +64,7 @@ kaifa/
 ├── tests/                 # 回归测试（用 samples 验证核心算法）
 │   ├── test_pdf_rearrange.py
 │   └── test_excel_pricecard.py
-├── samples/               # 示例输入/输出（可直接拖入 GUI 测试）
 ├── build_exe.py           # PyInstaller 打包脚本
-├── build_exe.bat          # Windows 一键打包（双击）
 ├── requirements.txt       # Python 依赖
 └── README.md              # 本文档
 ```
@@ -229,16 +226,6 @@ ROW_GAP = 180        # 纵向合并容差（像素）
 - `img.width = 240` / `img.height = 480` → 嵌入参考图尺寸
 
 ---
-
-## 与原 HTML 版本的差异
-
-| 模块 | HTML 版 | Python 版 |
-|---|---|---|
-| PDF 渲染/读取 | pdf.js (browser) | PyMuPDF (`pymupdf`) |
-| PDF 重排输出 | pdf-lib `embedPage` | PyMuPDF `show_pdf_page`（同样引用源页面区域，不重渲染） |
-| Excel 读写 | SheetJS + ExcelJS | openpyxl |
-| 标签图绘制 | Canvas | Pillow |
-| GUI | HTML/CSS | Tkinter |
 
 **输出等价性**：
 - PDF 重排：清晰度由源 PDF 决定（不重渲染），所以两版输出文件**视觉一致**
