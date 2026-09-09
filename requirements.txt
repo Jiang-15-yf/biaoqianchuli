@@ -1,0 +1,17 @@
+# 价格牌处理工具 - Python 项目依赖
+# 版本说明：基于 2026-09 验证可用版本
+
+# PDF 读取/渲染/生成（替代原 HTML 的 pdf.js + pdf-lib）
+PyMuPDF>=1.23.0
+
+# Excel 读写（替代原 HTML 的 SheetJS + ExcelJS）
+openpyxl>=3.1.2
+
+# 旧 .xls 解析（xlrd 2.0+ 已移除 .xls 支持，必须固定 1.2.0；不需要可注释掉）
+xlrd==1.2.0
+
+# 图像处理（用于绘制标签参考图、Pillow 读取用户上传图片）
+Pillow>=10.0.0
+
+# 打包 EXE（仅 build_exe.py 需要；运行 GUI 不需要）
+pyinstaller>=6.0
